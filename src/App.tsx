@@ -1,7 +1,9 @@
+import Home from "./components/Home";
+
 function App() {
   return (
     <>
-      <h1 className="text-xl font-bold underline">Ali Hassan</h1>
+      <Home />
     </>
   );
 }
