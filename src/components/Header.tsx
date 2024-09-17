@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png"; // Path to your transparent logo PNG
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,8 +20,14 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
+            {/* Logo with rounded corners */}
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-10 w-10 rounded-full mr-2" // Rounded and fixed size
+            />
             <Link to="/" className="text-2xl font-bold text-blue-600 mr-6">
-              BlogHub
+              DevOrbit
             </Link>
             <nav className="hidden md:flex space-x-4">
               <Link
