@@ -8,10 +8,15 @@ import WritePage from "./pages/WritePage";
 import BookmarksPage from "./pages/BookmarksPage";
 import TagsPage from "./pages/TagsPage";
 import ProfilePage from "./pages/ProfilePage";
+import BlogPostPage from "./pages/BlogPostPage";
+import SearchResultsPage from "./pages/SearchResultPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export interface Post {
+  id: string;
   title: string;
   excerpt: string;
+  content: string;
   author: string;
   date: string;
   tags: string[];
@@ -20,9 +25,9 @@ export interface Post {
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-gray-50">
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow container mx-auto px-4 py-8">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/feed" element={<FeedPage />} />
@@ -30,6 +35,9 @@ function App() {
             <Route path="/bookmarks" element={<BookmarksPage />} />
             <Route path="/tags" element={<TagsPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/post/:id" element={<BlogPostPage />} />
+            <Route path="/search" element={<SearchResultsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
         <Footer />
